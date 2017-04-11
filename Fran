@@ -1,0 +1,116 @@
+package com.example.edwingariza.franssenpropertiesinc;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.net.sip.SipAudioCall;
+import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by edwingariza on 4/10/17.
+ */
+
+public class DatabaseHelper extends SQLiteOpenHelper {
+
+
+    private static final int DATABASE_VERSION =1;
+    private static final String DATABASE_NAME ="franssenP";
+    private static final String TABLE_APLICATION_A ="aplicant";
+    private static final String KEY_NAME ="name";
+    private static final String KEY_ADDRESS ="address";
+    private static final String KEY_CITY ="city";
+
+    public DatabaseHelper(Context context){
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String CREATE_APPLICANT_TABLE = "CREATE_TABLE" + TABLE_APLICATION_A + "(" + KEY_NAME+ " TEXT," + KEY_ADDRESS + " TEXT,"
+                + KEY_CITY + " TEXT" + ")";
+
+        db.execSQL(CREATE_APPLICANT_TABLE);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_APLICATION_A);
+
+        onCreate(db);
+    }
+
+
+    void addApplicant(ApplicationInformation appli){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("KEY_NAME", appli.getName());
+        values.put("KEY_ADDRESS", appli.getAddress());
+        values.put("KEY_CITY", appli.getCity());
+
+        db.insert(TABLE_APLICATION_A, null, values);
+        db.close();
+    }
+
+    ApplicationInformation getApplicant(String name){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_APLICATION_A, new String[] {KEY_NAME, KEY_ADDRESS, KEY_CITY}, KEY_NAME
+                + "m?", new String[]{String.valueOf(name)}, null, null, null, null);
+
+        if(cursor != null ){
+            cursor.moveToFirst();
+        }
+
+        ApplicationInformation application = new ApplicationInformation(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2));
+
+        return application;
+    }
+
+    public List<ApplicationInformation> getAllContacts(){
+        List<ApplicationInformation> contactList = new ArrayList<>();
+
+        String selectQuery = "SELECT + FROM" + TABLE_APLICATION_A;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst() ){
+            do {
+                {
+                    ApplicationInformation applicant = new ApplicationInformation();
+                    applicant.setName(cursor.getString(0));
+                    applicant.setAddress(cursor.getString(1));
+                    applicant.setCity(cursor.getString(2));
+
+                    contactList.add(applicant);
+                }
+
+            }
+            while (cursor.moveToNext());
+
+        }
+        return contactList;
+    }
+
+    public int updateContact(ApplicationInformation appli){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("KEY_NAME", appli.getName());
+        values.put("KEY_ADDRESS", appli.getAddress());
+        values.put("KEY_CITY", appli.getCity());
+
+        return  db.update(TABLE_APLICATION_A, values, KEY_NAME + "m?",
+                new String[]{String.valueOf(appli.getName())});
+
+    }
+
+
+
+}
