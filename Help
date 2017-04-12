@@ -1,0 +1,67 @@
+editName = (EditText) findViewById(R.id.name_Text);
+        editAdd = (EditText) findViewById(R.id.address_Text);
+        editCity = (EditText) findViewById(R.id.city_Text);
+        editState = (EditText) findViewById(R.id.state_Text);
+        editZip = (EditText) findViewById(R.id.zip_Text);
+        editPhone = (EditText) findViewById(R.id.phone_Text);
+
+        editNameRel1 = (EditText) findViewById(R.id.rel_name_1);
+        editRelation1 = (EditText) findViewById(R.id.relation_Text);
+        editAddress1 = (EditText) findViewById(R.id.address_rel_1);
+        editPhone1 = (EditText) findViewById(R.id.phone_rel_1);
+        editNameRel2 = (EditText) findViewById(R.id.name_rel_2);
+        editRelation2 = (EditText) findViewById(R.id.relation_relation_2);
+        editAddress2 = (EditText) findViewById(R.id.address_rel_2);
+        editPhone2 =(EditText) findViewById(R.id.phone_rel_2);
+
+        editPreviewsPropertyName = (EditText)  findViewById(R.id.property_name_text);
+        editPreviewsPropertyPhone = (EditText) findViewById(R.id.property_phone_text);
+        editUnderName = (EditText) findViewById(R.id.name_have);
+        editWhen = (EditText) findViewById(R.id.when_text) ;
+        editCurrentLand = (EditText) findViewById(R.id.landlord_name);
+        editCurrentPhone = (EditText) findViewById(R.id.land_phone);
+        editPreLanName = (EditText) findViewById(R.id.prev_name);
+        editPreLandPhone = (EditText) findViewById(R.id.prev_phone);
+        editNameHouse1 = (EditText) findViewById(R.id.name_relative_1);
+
+        editHouseRel1= (EditText) findViewById(R.id.relation_rel_1);
+        editHouseBirth1 = (EditText) findViewById(R.id.brth_1);
+        editHouseAge1 = (EditText) findViewById(R.id.age_rel_1);
+        editHouseSsn1 = (EditText) findViewById(R.id.social_rel_1);
+
+        editNameHouse2 = (EditText) findViewById(R.id.name_relative_2);
+        editHouseRel2= (EditText) findViewById(R.id.relation_rel_2);
+        editHouseBirth2 = (EditText) findViewById(R.id.brth_2);
+        editHouseAge2 = (EditText) findViewById(R.id.age_rel_2);
+        editHouseSsn2 = (EditText) findViewById(R.id.social_rel_2);
+
+        editNameHouse3 = (EditText) findViewById(R.id.name_relative_3);
+        editHouseRel3= (EditText) findViewById(R.id.relation_rel_3);
+        editHouseBirth3 = (EditText) findViewById(R.id.brth_3);
+        editHouseAge3 = (EditText) findViewById(R.id.age_rel_3);
+        editHouseSsn3 = (EditText) findViewById(R.id.social_rel_3);
+
+        editNameHouse4 = (EditText) findViewById(R.id.name_relative_4);
+        editHouseRel4= (EditText) findViewById(R.id.relation_rel_4);
+        editHouseBirth4 = (EditText) findViewById(R.id.brth_4);
+        editHouseAge4 = (EditText) findViewById(R.id.age_rel_4);
+        editHouseSsn4 = (EditText) findViewById(R.id.social_rel_4);
+        editHouseHandy = (EditText) findViewById(R.id.handi_text);
+
+        editIncomeName1 = (EditText) findViewById(R.id.income_family_1);
+        editIncomeSource1 = (EditText) findViewById(R.id.income_source_1);
+        editIncomeAmount1 =(EditText) findViewById(R.id.amount_1);
+        editIncomeName2 = (EditText) findViewById(R.id.income_family_2);
+        editIncomeSource2 = (EditText) findViewById(R.id.income_source_2);
+        editIncomeAmount2 =(EditText) findViewById(R.id.amount_2);
+        editIncomeName3 = (EditText) findViewById(R.id.income_family_3);
+        editIncomeSource3 = (EditText) findViewById(R.id.income_source_3);
+        editIncomeAmount3 =(EditText) findViewById(R.id.amount_3);
+        editBankCheck = (EditText) findViewById(R.id.check_bank);
+        editBankSave = (EditText) findViewById(R.id.saving_bank);
+        editPropVal = (EditText) findViewById(R.id.value_text);
+        editMarketVal = (EditText) findViewById(R.id.marketvalue_text);
+        editMake = (EditText) findViewById(R.id.make_text);
+        editModel = (EditText) findViewById(R.id.model_text);
+        editYear = (EditText) findViewById(R.id.year_text);
+        editHear = (EditText) findViewById(R.id.hear_text);
